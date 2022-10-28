@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
-import AirportServiceRow from './AirportServiceRow';
-import UpdateAirportService from './UpdateAirportService';
+import ToursServiceRow from './ToursServiceRow';
+import UpdateTours from './UpdateTours';
 
-const ManageAirportService = () => {
+const ManageTours = () => {
 
     const [updateService, setUpdateService] = useState(null)
 
-    const {data : airportService, isLoading, refetch} = useQuery('airportservice', () => fetch('http://localhost:5000/airportservice')
+    const {data : tours, isLoading, refetch} = useQuery('tours', () => fetch('http://localhost:5000/tours')
     .then(res => res.json()))
     if(isLoading){
         return <Loading></Loading>
@@ -16,7 +16,7 @@ const ManageAirportService = () => {
 
     return (
         <div>
-            <h1>Manage Service: {airportService.length}</h1>
+            <h1>Manage Service: {tours.length}</h1>
             <div className="overflow-x-auto">
                 <table className="table w-full text-white">
                     <thead>
@@ -31,16 +31,16 @@ const ManageAirportService = () => {
                     </thead>
                     <tbody>
                         {
-                            airportService.map((service, index) => <AirportServiceRow service={service} key={service._id} index={index} refetch={refetch} updateService={updateService} setUpdateService={setUpdateService}></AirportServiceRow>)
+                            tours.map((tour, index) => <ToursServiceRow tour={tour} key={tour._id} index={index} refetch={refetch} updateService={updateService} setUpdateService={setUpdateService}></ToursServiceRow>)
                         }
                     </tbody>
                 </table>
             </div>
             {
-                updateService && <UpdateAirportService updateService={updateService} setUpdateService={setUpdateService} refetch={refetch}></UpdateAirportService>
+                updateService && <UpdateTours updateService={updateService} setUpdateService={setUpdateService} refetch={refetch}></UpdateTours>
             }
         </div>
     );
 };
 
-export default ManageAirportService;
+export default ManageTours;

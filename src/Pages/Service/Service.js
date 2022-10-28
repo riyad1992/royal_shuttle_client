@@ -4,7 +4,7 @@ const Service = ({service, setServiceBook, setInfo}) => {
     
 
     return (
-        <div className="card lg:max-w-lg shadow-xl">
+        <div data-aos="fade-up" data-aos-duration="3000" className="card lg:max-w-lg shadow-xl">
             <figure className="px-10 pt-10">
                 <img src={service.img} alt="Shoes" className="rounded-xl" />
             </figure>

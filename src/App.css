@@ -7,6 +7,16 @@
   pointer-events: none;
 }
 
+.navbar{
+  z-index: 100;
+  transition: 0.8s cubic-bezier(0, 0, 0, 0.8);
+}
+.headerScrolled {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px 0;
+  backdrop-filter: blur(20px);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

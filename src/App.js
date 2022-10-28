@@ -5,7 +5,6 @@ import { Routes, Route } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
 import About from './Pages/About/About';
 import Login from './Pages/Login/Login';
-import Services from './Pages/Services/Services';
 import Footer from './Pages/Shared/Footer/Footer';
 import SignUp from './Pages/Login/SignUp';
 import RequireAuth from './Pages/Login/RequireAuth';
@@ -24,6 +23,10 @@ import ManageAirportService from './Pages/Dashboard/ManageAirportService';
 import ServiceInquire from './Pages/ServiceInquire/ServiceInquire';
 import AllBookings from './Pages/Dashboard/AllBookings';
 import AllReview from './Pages/Dashboard/AllReview';
+import Tours from './Pages/Tours/Tours';
+import AddTour from './Pages/Dashboard/AddTour';
+import ManageTours from './Pages/Dashboard/ManageTours';
+import AllServices from './Pages/AllServices/AllServices';
 
 function App() {
   return (
@@ -32,7 +35,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="services" element={<Services />} />
+        <Route path="services" element={<AllServices />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
@@ -42,11 +45,14 @@ function App() {
           <Route path='bookings' element={<RequireAdmin><AllBookings></AllBookings></RequireAdmin>}></Route>
           <Route path='addService' element={<RequireAdmin><AddService></AddService></RequireAdmin>}></Route>
           <Route path='airportService' element={<RequireAdmin><AddAirportService></AddAirportService></RequireAdmin>}></Route>
+          <Route path='addtours' element={<RequireAdmin><AddTour></AddTour></RequireAdmin>}></Route>
           <Route path='manageService' element={<RequireAdmin><ManageService></ManageService></RequireAdmin>}></Route>
           <Route path='manageAirportService' element={<RequireAdmin><ManageAirportService></ManageAirportService></RequireAdmin>}></Route>
+          <Route path='manageTours' element={<RequireAdmin><ManageTours></ManageTours></RequireAdmin>}></Route>
           <Route path='manageReviews' element={<RequireAdmin><AllReview></AllReview></RequireAdmin>}></Route>
         </Route>
         <Route path="airport" element={<Airport />} />
+        <Route path="tours" element={<Tours />} />
         <Route path="serviceInquire" element={<ServiceInquire />} />
       </Routes>
       <Footer></Footer>

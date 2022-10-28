@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
 import Service from '../Service/Service';
 import Loading from '../Shared/Loading';
 import ServiceBooked from './ServiceBooked';
@@ -22,7 +23,7 @@ const Services = () => {
             <h4 className='text-xl text-primary text-center'>All Services</h4>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
-                    services?.map(service => <Service key={service._id} service={service} setInfo={setInfo} setServiceBook={setServiceBook}></Service>)
+                    services?.slice(0,3).map(service => <Service key={service._id} service={service} setInfo={setInfo} setServiceBook={setServiceBook}></Service>)
                 }
             </div>
             {
@@ -31,6 +32,7 @@ const Services = () => {
             {
                 info && <ServiceDetails info={info} setServiceBook={setServiceBook} setInfo={setInfo}></ServiceDetails>
             }
+            <h4 className='text-xl text-primary text-center cursor-pointer my-5'><Link to={'/services'}>More Services ..</Link></h4>
         </div>
     );
 };

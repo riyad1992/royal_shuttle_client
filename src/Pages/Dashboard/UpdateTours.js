@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
-const UpdateAirportService = ({updateService, setUpdateService, refetch}) => {
+const UpdateTours = ({updateService, setUpdateService, refetch}) => {
 
     const {_id} = updateService
     const [service, setService] = useState({})
@@ -9,7 +9,7 @@ const UpdateAirportService = ({updateService, setUpdateService, refetch}) => {
     const [serviceInfo, setServiceInfo] = useState(initialInfo);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/airportservice/${_id}`, {
+        fetch(`http://localhost:5000/tours/${_id}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -33,7 +33,7 @@ const UpdateAirportService = ({updateService, setUpdateService, refetch}) => {
             ...serviceInfo,
         }
 
-        fetch(`http://localhost:5000/airportservice/${_id}`, {
+        fetch(`http://localhost:5000/tours/${_id}`, {
             method: 'PUT',
             headers:{
                 "content-type": "application/json",
@@ -46,21 +46,19 @@ const UpdateAirportService = ({updateService, setUpdateService, refetch}) => {
             if(data.modifiedCount> 0){
                 setServiceInfo('')
             }
-            toast(`Airport Service updated ` )
+            toast(`Tours updated ` )
 
             refetch()
             setUpdateService(null)
         })
-
-        // setBooking(null)
     }
 
     return (
         <div>
-            <input type="checkbox" id="airport-modal-1" className="modal-toggle" />
+            <input type="checkbox" id="tour-modal-1" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box bg-white">
-                    <label htmlFor="airport-modal-1" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label htmlFor="tour-modal-1" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-lg text-primary">Update for : {service.name}</h3>
                     <form onSubmit={handleUpdateService } className='grid grid-cols-1 gap-3 justify-items-center mt-3 text-white'>
                         <input name='name' onBlur={handleOnBlur} placeholder={service.name} type="text" className="input input-bordered w-full max-w-xs" />
@@ -79,4 +77,4 @@ const UpdateAirportService = ({updateService, setUpdateService, refetch}) => {
     );
 };
 
-export default UpdateAirportService;
+export default UpdateTours;

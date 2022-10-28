@@ -44,9 +44,9 @@ const Baner = () => {
                 className="mySwiper6"
             >
                 <SwiperSlide>
-                    <div className="card mb-28 bg-white image-full">
+                    <div className="card mb-28 bg-white image-full  bg-white">
                         <figure><img src={shuttle} alt="Shoes" /></figure>
-                        <div className="flex flex-col items-center justify-center ">
+                        <div className="flex flex-col items-center justify-center">
                             <h1 className="text-3xl p-5 font-bold" data-aos="fade-up" data-aos-duration="3000">New! Improved service offerings to meet your needs!</h1>
                             <p className="p-6" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">With the aim to provide you with the best possible service, we're introducing new ride service options to better suit your transportation needs and your pocketbook!</p>
                             <PrimaryButton data-aos="fade-up" data-aos-anchor-placement="center-bottom">Get Started</PrimaryButton>

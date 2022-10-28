@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
-const AddAirportService = () => {
+const AddTour = () => {
 
     const { register, formState: { errors }, handleSubmit , reset } = useForm();
 
@@ -29,7 +29,7 @@ const AddAirportService = () => {
                     img: img
                 }
 
-                fetch('http://localhost:5000/airportservice', {
+                fetch('http://localhost:5000/tours', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json',
@@ -40,10 +40,10 @@ const AddAirportService = () => {
                 .then(res => res.json())
                 .then(inserted => {
                     if(inserted.insertedId){
-                        toast.success('Service Added Successfully')
+                        toast.success('Tour Added Successfully')
                         reset()
                     }else{
-                        toast.error('Failed to add the Service')
+                        toast.error('Failed to add the Tour')
                     }
                 })
             }
@@ -52,7 +52,7 @@ const AddAirportService = () => {
 
     return (
         <div>
-            <h2>Add a New Airport Service</h2>
+            <h2>Add a New Tours</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <div className="form-control w-full max-w-xs">
@@ -61,7 +61,7 @@ const AddAirportService = () => {
                     </label>
                     <input 
                         type="text" 
-                        placeholder="Service Name" 
+                        placeholder="Tour Name" 
                         className="input input-bordered bg-white w-full max-w-xs" 
                         {...register("name",  {
                             required: {
@@ -162,4 +162,4 @@ const AddAirportService = () => {
     );
 };
 
-export default AddAirportService;
+export default AddTour;

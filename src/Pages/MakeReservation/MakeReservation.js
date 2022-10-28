@@ -5,7 +5,7 @@ import PrimaryButton from '../Shared/PrimaryButton';
 
 const MakeReservation = () => {
     return (
-        <section className='flex  justify-center items-center' style={{background: `url(${bgVan})`}}>
+        <section className='flex  justify-center items-center mt-28' style={{background: `url(${bgVan})`}}>
             <div className='flex-1 hidden lg:block'>
                 <img src={phone} className="mt-[-75px]" alt=''/>
             </div>
