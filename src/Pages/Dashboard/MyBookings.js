@@ -14,7 +14,7 @@ const MyBookings = () => {
 
     useEffect(() => {
         if(user){
-            fetch(`http://localhost:5000/reservations?passangerEmail=${user.email}`, {
+            fetch(`https://royal-shuttle-server.onrender.com/reservations?passangerEmail=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

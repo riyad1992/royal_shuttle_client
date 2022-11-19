@@ -9,7 +9,7 @@ const UpdateTours = ({updateService, setUpdateService, refetch}) => {
     const [serviceInfo, setServiceInfo] = useState(initialInfo);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tours/${_id}`, {
+        fetch(`https://royal-shuttle-server.onrender.com/tours/${_id}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -33,7 +33,7 @@ const UpdateTours = ({updateService, setUpdateService, refetch}) => {
             ...serviceInfo,
         }
 
-        fetch(`http://localhost:5000/tours/${_id}`, {
+        fetch(`https://royal-shuttle-server.onrender.com/tours/${_id}`, {
             method: 'PUT',
             headers:{
                 "content-type": "application/json",

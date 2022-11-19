@@ -8,7 +8,7 @@ const ManageTours = () => {
 
     const [updateService, setUpdateService] = useState(null)
 
-    const {data : tours, isLoading, refetch} = useQuery('tours', () => fetch('http://localhost:5000/tours')
+    const {data : tours, isLoading, refetch} = useQuery('tours', () => fetch('https://royal-shuttle-server.onrender.com/tours')
     .then(res => res.json()))
     if(isLoading){
         return <Loading></Loading>

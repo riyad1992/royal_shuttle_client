@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const UserRow = ({user, refetch}) => {
     const {email, role, _id} = user;
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://royal-shuttle-server.onrender.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -27,7 +27,7 @@ const UserRow = ({user, refetch}) => {
     const handelDelete = id => {
         const procced = window.confirm('Are You Sure you want Delete Service')
         if(procced){
-            fetch(`http://localhost:5000/user/${id}`, {
+            fetch(`https://royal-shuttle-server.onrender.com/user/${id}`, {
             method: 'DELETE',
             headers: {'authorization': `Bearer ${localStorage.getItem('accessToken')}`}
             })

@@ -10,7 +10,7 @@ const Tours = () => {
     const [serviceBook, setServiceBook] = useState(null)
     const [detailsInfo, setDetailsInfo] = useState(null)
 
-    const {data: tours, isLoading} = useQuery(['tours'], () => fetch(`http://localhost:5000/tours`)
+    const {data: tours, isLoading} = useQuery(['tours'], () => fetch(`https://royal-shuttle-server.onrender.com/tours`)
     .then(res => res.json()))
 
         if(isLoading){

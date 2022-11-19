@@ -11,7 +11,7 @@ const AirportServiceRow = ({service, index, refetch, updateService, setUpdateSer
     const handelDelete = id => {
         const procced = window.confirm('Are You Sure you want Delete Service')
         if(procced){
-            fetch(`http://localhost:5000/airportservice/${id}`, {
+            fetch(`https://royal-shuttle-server.onrender.com/airportservice/${id}`, {
             method: 'DELETE',
             headers: {'authorization': `Bearer ${localStorage.getItem('accessToken')}`}
             })

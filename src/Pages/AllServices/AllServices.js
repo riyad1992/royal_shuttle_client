@@ -10,7 +10,7 @@ const AllServices = () => {
     const [serviceBook, setServiceBook] = useState(null)
     const [info, setInfo] = useState(null)
 
-    const {data: services, isLoading} = useQuery(['services'], () => fetch(`http://localhost:5000/newservice`)
+    const {data: services, isLoading} = useQuery(['services'], () => fetch(`https://royal-shuttle-server.onrender.com/newservice`)
     .then(res => res.json()))
 
         if(isLoading){

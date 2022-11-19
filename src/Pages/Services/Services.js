@@ -11,7 +11,7 @@ const Services = () => {
     const [serviceBook, setServiceBook] = useState(null)
     const [info, setInfo] = useState(null)
 
-    const {data: services, isLoading} = useQuery(['services'], () => fetch(`http://localhost:5000/newservice`)
+    const {data: services, isLoading} = useQuery(['services'], () => fetch(`https://royal-shuttle-server.onrender.com/newservice`)
     .then(res => res.json()))
 
         if(isLoading){
@@ -32,7 +32,7 @@ const Services = () => {
             {
                 info && <ServiceDetails info={info} setServiceBook={setServiceBook} setInfo={setInfo}></ServiceDetails>
             }
-            <h4 className='text-xl text-primary text-center cursor-pointer my-5'><Link to={'/services'}>More Services ..</Link></h4>
+            <h4 className='text-xl text-primary text-center cursor-pointer my-5 underline'><Link to={'/services'}>More Services ..</Link></h4>
         </div>
     );
 };
@@ -104,7 +104,7 @@ export default Services;
 
 //     const formatedDate = format(date, "PP")
 
-//     const {data: services, isLoading, refetch} = useQuery(['available', formatedDate], () => fetch(`http://localhost:5000/available?date=${formatedDate}`)
+//     const {data: services, isLoading, refetch} = useQuery(['available', formatedDate], () => fetch(`https://royal-shuttle-server.onrender.com/available?date=${formatedDate}`)
 //     .then(res => res.json()))
 
 //         if(isLoading){

@@ -10,7 +10,7 @@
 
 // const Reviwes = () => {
 
-//     const {data: reviews, isLoading, refetch} = useQuery('reviews',() => fetch('http://localhost:5000/reviews').then(res => res.json()))
+//     const {data: reviews, isLoading, refetch} = useQuery('reviews',() => fetch('https://royal-shuttle-server.onrender.com/reviews').then(res => res.json()))
 
 //     if(isLoading){
 //         return <Loading></Loading>
@@ -54,7 +54,7 @@ import Loading from "../Shared/Loading";
 
 const Reviwes = () => {
 
-    const {data: reviews, isLoading} = useQuery('reviews',() => fetch('http://localhost:5000/reviews').then(res => res.json()))
+    const {data: reviews, isLoading} = useQuery('reviews',() => fetch('https://royal-shuttle-server.onrender.com/reviews').then(res => res.json()))
 
     if(isLoading){
         return <Loading></Loading>

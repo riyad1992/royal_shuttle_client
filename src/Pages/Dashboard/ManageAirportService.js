@@ -8,7 +8,7 @@ const ManageAirportService = () => {
 
     const [updateService, setUpdateService] = useState(null)
 
-    const {data : airportService, isLoading, refetch} = useQuery('airportservice', () => fetch('http://localhost:5000/airportservice')
+    const {data : airportService, isLoading, refetch} = useQuery('airportservice', () => fetch('https://royal-shuttle-server.onrender.com/airportservice')
     .then(res => res.json()))
     if(isLoading){
         return <Loading></Loading>

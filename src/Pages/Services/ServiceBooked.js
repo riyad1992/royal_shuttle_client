@@ -30,7 +30,7 @@ const ServiceBooked = ({serviceBook, setServiceBook, refetch}) => {
             price: totalPrice,
         }
 
-        fetch('http://localhost:5000/reservations', {
+        fetch('https://royal-shuttle-server.onrender.com/reservations', {
             method: 'POST',
             headers:{
                 "content-type": "application/json"

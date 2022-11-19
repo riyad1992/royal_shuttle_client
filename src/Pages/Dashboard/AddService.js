@@ -6,7 +6,7 @@ const AddService = () => {
 
     const { register, formState: { errors }, handleSubmit , reset } = useForm();
 
-    // const {data,  isLoading} = useQuery('services', () => fetch('http://localhost:5000/service').then(res => res.json()))
+    // const {data,  isLoading} = useQuery('services', () => fetch('https://royal-shuttle-server.onrender.com/service').then(res => res.json()))
 
     const imageStorageKey = 'ecac5837ae73f48a90147331fb1566ac'
 
@@ -31,7 +31,7 @@ const AddService = () => {
                     img: img
                 }
 
-                fetch('http://localhost:5000/newservice', {
+                fetch('https://royal-shuttle-server.onrender.com/newservice', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json',

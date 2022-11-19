@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
 
 const AllReview = () => {
-    const {data: reviews, isLoading, refetch} = useQuery('reviews',() => fetch('http://localhost:5000/reviews').then(res => res.json()))
+    const {data: reviews, isLoading, refetch} = useQuery('reviews',() => fetch('https://royal-shuttle-server.onrender.com/reviews').then(res => res.json()))
 
     if(isLoading){
         return <Loading></Loading>
@@ -13,7 +13,7 @@ const AllReview = () => {
     const handelDelete = id => {
         const procced = window.confirm('Are You Sure you want Delete Review')
         if(procced){
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://royal-shuttle-server.onrender.com/reviews/${id}`, {
             method: 'DELETE',
             headers: {'authorization': `Bearer ${localStorage.getItem('accessToken')}`}
             })

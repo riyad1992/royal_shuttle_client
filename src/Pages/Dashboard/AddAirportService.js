@@ -29,7 +29,7 @@ const AddAirportService = () => {
                     img: img
                 }
 
-                fetch('http://localhost:5000/airportservice', {
+                fetch('https://royal-shuttle-server.onrender.com/airportservice', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json',

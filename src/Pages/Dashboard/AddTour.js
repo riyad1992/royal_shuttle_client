@@ -29,7 +29,7 @@ const AddTour = () => {
                     img: img
                 }
 
-                fetch('http://localhost:5000/tours', {
+                fetch('https://royal-shuttle-server.onrender.com/tours', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json',

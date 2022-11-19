@@ -19,7 +19,7 @@ const AllBookings = () => {
 
     // useEffect(() => {
     //     if(user){
-    //         fetch(`http://localhost:5000/bookings`, {
+    //         fetch(`https://royal-shuttle-server.onrender.com/bookings`, {
     //             method: 'GET',
     //             headers: {
     //                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -37,7 +37,7 @@ const AllBookings = () => {
     //     }
     // }, [user, navigate])
 
-    const {data: reservation, isLoading, refetch} = useQuery('reservation',() => fetch('http://localhost:5000/bookings', {
+    const {data: reservation, isLoading, refetch} = useQuery('reservation',() => fetch('https://royal-shuttle-server.onrender.com/bookings', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -51,7 +51,7 @@ const AllBookings = () => {
     const handelDelete = id => {
         const procced = window.confirm('Are You Sure you want Delete reservation')
         if(procced){
-            fetch(`http://localhost:5000/bookings/${id}`, {
+            fetch(`https://royal-shuttle-server.onrender.com/bookings/${id}`, {
             method: 'DELETE',
             headers: {'authorization': `Bearer ${localStorage.getItem('accessToken')}`}
             })

@@ -12,7 +12,7 @@ const ServiceRow = ({service, index, refetch, updateService, setUpdateService}) 
     const handelDelete = id => {
         const procced = window.confirm('Are You Sure you want Delete Service')
         if(procced){
-            fetch(`http://localhost:5000/newservice/${id}`, {
+            fetch(`https://royal-shuttle-server.onrender.com/newservice/${id}`, {
             method: 'DELETE',
             headers: {'authorization': `Bearer ${localStorage.getItem('accessToken')}`}
             })

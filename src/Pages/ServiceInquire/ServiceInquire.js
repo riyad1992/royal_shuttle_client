@@ -10,6 +10,7 @@ const ServiceInquire = () => {
         e.preventDefault();
 
         emailjs.sendForm('service_64dykai', 'template_shkpznk', form.current, 'HwcfADj8QlHFcTjL6')
+        // emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, form.current, process.env.PUBLIC_ID)
         .then((result) => {
             toast(`Thank you for Your Interested Please Check your Eamil`)
         }, (error) => {
@@ -20,7 +21,7 @@ const ServiceInquire = () => {
 
     return (
         <div>
-            <h3 className='text-xl my-5'>If you want any spacial Service You can pass Us This Information so we will Update You All information About service</h3>
+            <h3 className='text-xl my-5'>In Belize, you can pick one of our 3 possible transportation options: Shared Shuttle, Private Transfer or Deluxe Private Transfer. Pre-booking with Royal Shuttle service guarantees you quick departure and short waiting times. We serve almost all hotels in the Belize</h3>
             <form ref={form} onSubmit={sendEmail} className='grid grid-cols-1 gap-3 justify-items-center mt-3'>
                 <div className="w-full max-w-xs">
                     <label>Name</label>
